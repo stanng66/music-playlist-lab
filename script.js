@@ -13,18 +13,32 @@
 let mySongs = [
     // Add your favorite song titles here as strings
     // Example: "Song Title"
+    "Zombie",
+    "Rising",
+    "My Crush",
+    "Love In My Heart",
+    "All Night Radio"
 ];
 
 // TODO: Create an array with at least 5 artist names
 let myArtists = [
     // Add artist names here as strings
     // Example: "Artist Name"
+    "PURPLE KISS",
+    "TripleS",
+    "muque",
+    "BABYMONSTER",
+    "Ado"
 ];
 
 // TODO: Create an array with music genres
 let genres = [
     // Add music genres here as strings
     // Example: "Rock", "Pop", "Jazz"
+    "K-pop",
+    "J-pop",
+    "Rock",
+    "Dance"
 ];
 
 // TODO: Create an empty array for favorite songs (this should start empty)
@@ -40,15 +54,15 @@ let favorites = [
 function displaySelectedSongs() {
     // TODO: Get the first song from mySongs (index 0)
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#accessing_array_elements
-    let firstSong = // Your code here
+    let firstSong = mySongs[0]; // Your code here
 
     // TODO: Get the last song from mySongs
     // HINT: Use mySongs.length - 1 for the last index
-    let lastSong = // Your code here
+    let lastSong = mySongs[mySongs.length - 1]; // Your code here
 
     // TODO: Get the middle song from mySongs
     // HINT: Use Math.floor(mySongs.length / 2) for middle index
-    let middleSong = // Your code here
+    let middleSong = mySongs[Math.floor(mySongs.length / 2)]; // Your code here
 
     // DOM operations handled for you - focus on the array logic above
     document.getElementById('first-song').textContent = firstSong;
@@ -66,16 +80,16 @@ function displaySelectedSongs() {
 function showMusicStats() {
     // TODO: Count songs using .length property
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
-    let songCount = // Your code here - use mySongs.length
+    let songCount = mySongs.length; // Your code here - use mySongs.length
 
     // TODO: Count artists using .length property
-    let artistCount = // Your code here - use myArtists.length
+    let artistCount = myArtists.length; // Your code here - use myArtists.length
 
     // TODO: Count genres using .length property
-    let genreCount = // Your code here - use genres.length
+    let genreCount = genres.length; // Your code here - use genres.length
 
     // TODO: Count favorites using .length property
-    let favoritesCount = // Your code here - use favorites.length
+    let favoritesCount = favorites.length; // Your code here - use favorites.length
 
     // Check if arrays are properly filled
     if (mySongs.length === 0) {
