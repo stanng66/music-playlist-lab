@@ -122,7 +122,7 @@ function showMusicStats() {
 function addSongToEnd() {
     // TODO: Use .push() method to add "New Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
-    // Your code here - use mySongs.push("New Song")
+    mySongs.push("New Song"); // Your code here - use mySongs.push("New Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
@@ -138,7 +138,7 @@ function addSongToEnd() {
 function addSongToBeginning() {
     // TODO: Use .unshift() method to add "First Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
-    // Your code here - use mySongs.unshift("First Song")
+    mySongs.unshift("First Song"); // Your code here - use mySongs.unshift("First Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
@@ -160,11 +160,11 @@ function addRandomToFavorites() {
 
     // TODO: Pick a random song from mySongs
     // HINT: Use Math.floor(Math.random() * mySongs.length)
-    let randomIndex = // Your code here
-    let randomSong = // Your code here - use mySongs[randomIndex]
+    let randomIndex = Math.floor(Math.random() * mySongs.ength); // Your code here
+    let randomSong = mySongs[randomIndex]; // Your code here - use mySongs[randomIndex]
 
     // TODO: Add it to favorites using .push()
-    // Your code here - use favorites.push(randomSong)
+    favourites.push(randomSong); // Your code here - use favorites.push(randomSong)
 
     // DOM operations handled for you - focus on the array logic above
     updateDisplays();
@@ -185,7 +185,7 @@ function removeLastSong() {
 
     // TODO: Use .pop() to remove and get the last song
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
-    let removedSong = // Your code here - use mySongs.pop()
+    let removedSong = mySongs.pop(); // Your code here - use mySongs.pop()
 
     // DOM operations handled for you - focus on the array logic above
     updateDisplays();
