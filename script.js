@@ -17,7 +17,9 @@ let mySongs = [
     "Rising",
     "My Crush",
     "Love In My Heart",
-    "All Night Radio"
+    "All Night Radio",
+    "Stayin' Home", // Bonus challenge: Add more songs
+    "FLOWER (Prod. by AVIN)" // Bonus challenge: Add more songs
 ];
 
 // TODO: Create an array with at least 5 artist names
@@ -28,7 +30,9 @@ let myArtists = [
     "TripleS",
     "muque",
     "BABYMONSTER",
-    "Ado"
+    "Ado", 
+    "Shiranai.exe", // Bonus challenge: Add more artists
+    "HAON" // Bonus challenge: Add more artists
 ];
 
 // TODO: Create an array with music genres
@@ -38,7 +42,8 @@ let genres = [
     "K-pop",
     "J-pop",
     "Rock",
-    "Dance"
+    "Dance",
+    "Hip-hop"
 ];
 
 // TODO: Create an empty array for favorite songs (this should start empty)
@@ -122,7 +127,7 @@ function showMusicStats() {
 function addSongToEnd() {
     // TODO: Use .push() method to add "New Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
-    mySongs.push("New Song"); // Your code here - use mySongs.push("New Song")
+    mySongs.push("Ai To U"); // Your code here - use mySongs.push("New Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
@@ -138,7 +143,7 @@ function addSongToEnd() {
 function addSongToBeginning() {
     // TODO: Use .unshift() method to add "First Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
-    mySongs.unshift("First Song"); // Your code here - use mySongs.unshift("First Song")
+    mySongs.unshift("Heart Attack"); // Your code here - use mySongs.unshift("First Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
@@ -160,11 +165,11 @@ function addRandomToFavorites() {
 
     // TODO: Pick a random song from mySongs
     // HINT: Use Math.floor(Math.random() * mySongs.length)
-    let randomIndex = Math.floor(Math.random() * mySongs.ength); // Your code here
+    let randomIndex = Math.floor(Math.random() * mySongs.length); // Your code here
     let randomSong = mySongs[randomIndex]; // Your code here - use mySongs[randomIndex]
 
     // TODO: Add it to favorites using .push()
-    favourites.push(randomSong); // Your code here - use favorites.push(randomSong)
+    favorites.push(randomSong); // Your code here - use favorites.push(randomSong)
 
     // DOM operations handled for you - focus on the array logic above
     updateDisplays();
@@ -202,7 +207,7 @@ function removeFirstSong() {
 
     // TODO: Use .shift() to remove and get the first song
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
-    let removedSong = // Your code here - use mySongs.shift()
+    let removedSong = mySongs.shift(); // Your code here - use mySongs.shift()
 
     // DOM operations handled for you - focus on the array logic above
     updateDisplays();
@@ -226,10 +231,13 @@ function displayAllSongsForEach() {
 
     // TODO: Use .forEach() method to go through all songs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-    // Your code here - use mySongs.forEach(function(song, index) { ... })
+     mySongs.forEach(function(song, index) { 
+        // Your code here - use mySongs.forEach(function(song, index) { ... })
+        songsHTML += "<div class='song-item'>" + (index + 1) + ". " + song + "</div>"
+    }); 
 
     // Inside the forEach function, add each song to songsHTML like this:
-    // songsHTML += "<div class='song-item'>" + (index + 1) + ". " + song + "</div>";
+    // songsHTML += "<div class='song-item'>" + (index + 1) + ". " + song + "</div>"});
 
     // DOM operations handled for you - focus on the array logic above
     document.getElementById('all-songs').innerHTML = songsHTML;
@@ -246,7 +254,9 @@ function createFormattedSongList() {
 
     // TODO: Use .map() method to create an array of formatted strings
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-    let formattedSongs = // Your code here - use mySongs.map(function(song, index) { ... })
+    let formattedSongs = mySongs.map(function(song, index) { // Your code here - use mySongs.map(function(song, index) { ... })
+        return (index + 1) + ". " + song + " ♫"; 
+    });
 
     // Inside the map function, return a formatted string like:
     // return (index + 1) + ". " + song + " ♫";
@@ -254,7 +264,8 @@ function createFormattedSongList() {
     let songsHTML = "<h3>Formatted Songs (using .map):</h3>";
 
     // TODO: Use .forEach() to display the formatted songs array
-    // Your code here - use formattedSongs.forEach(function(formattedSong) { ... })
+    formattedSongs.forEach(function(formattedSong) {
+        songsHTML += "<div class='song-item'>" + formattedSong + "</div>"}); // Your code here - use formattedSongs.forEach(function(formattedSong) { ... })
 
     // Inside the forEach, add to songsHTML like:
     // songsHTML += "<div class='song-item'>" + formattedSong + "</div>";
@@ -286,7 +297,7 @@ function searchForSong() {
 
     // TODO: Use .indexOf() to find the song
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
-    let position = // Your code here - use mySongs.indexOf(searchTerm)
+    let position = mySongs.indexOf (searchTerm); // Your code here - use mySongs.indexOf(searchTerm)
 
     // TODO: Check if song was found and show appropriate message
     // HINT: indexOf returns -1 if not found, or the index if found
@@ -314,7 +325,7 @@ function checkIfSongExists() {
 
     // TODO: Use .includes() to check if song exists
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-    let exists = // Your code here - use mySongs.includes(searchTerm)
+    let exists = mySongs.includes(searchTerm); // Your code here - use mySongs.includes(searchTerm)
 
     // TODO: Show appropriate message
     if (exists) {
@@ -344,7 +355,7 @@ function getTopThreeSongs() {
     // TODO: Use destructuring to get first three songs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#array_destructuring
     // HINT: let [first, second, third] = mySongs;
-    let [first, second, third] = // Your code here
+    let [first, second, third] = mySongs; // Your code here
 
     showMessage("✅ Top 3 songs using destructuring: 1) " + first + " 2) " + second + " 3) " + third);
 }
@@ -358,7 +369,7 @@ function separateFirstSong() {
 
     // TODO: Use destructuring to get first song and rest
     // HINT: let [first, ...others] = mySongs;
-    let [first, ...others] = // Your code here
+    let [first, ...others] = mySongs; // Your code here
 
     showMessage("✅ First song: '" + first + "', Other songs: " + others.length + " using destructuring!");
 }
@@ -399,6 +410,76 @@ console.log("My Songs:", mySongs);
 console.log("My Artists:", myArtists);
 console.log("Genres:", genres);
 console.log("Favorites:", favorites);
+
+// ===========================================
+// Bonus Challenges
+// ===========================================
+
+// Challenge: Create a function to remove a specific song by name
+function removeSongByName() {
+    if (mySongs.length === 0) {
+        showMessage("No songs to remove!");
+        return;
+    }
+
+    let songName = document.getElementById("song-input").value.trim();
+
+    if (songName === 0) { 
+        showMessage("Please enter an existing song title to remove");
+        return;
+    }
+
+    let index = mySongs.indexOf(songName);
+
+    if (index !== -1) { 
+        mySongs.splice(index, 1);
+        updateDisplays();
+        showMessage("Removed '" + songName + "' from your collection!");
+    } else {
+        showMessage("Song '" + songName + "' not found!");
+    }
+}
+
+// Challenge: Create a function to sort your songs alphabetically
+function sortSongsAlphabetically() {
+    if (mySongs.length === 0) {
+        showMessage("No songs to sort!");
+        return;
+    }
+
+    mySongs.sort(); 
+    updateDisplays();
+    showMessage("Songs alphabetically sorted from A to Z!");
+}
+
+// Challenge: Add a way for users to input their own songs
+function addSongFromInput() {
+    let songName = document.getElementById('song-input').value;
+
+    if (songName.trim() === "") {
+        showMessage("Please enter a song title to add");
+        return;
+    }
+
+
+    let exist = false;
+    for (let i = 0; i < mySongs.length; i++) {
+        if (mySongs[i].toLowerCase() === songName.toLowerCase()) {
+            exist = true;
+            showMessage("Song '" + songName + "' already exists in your collection!");
+            break;
+        }
+    }
+   
+if (!exist) //(exist === false) 
+{
+    mySongs.push(songName); 
+    showMessage("Added '" + songName + "' to your collection!");
+}
+
+    updateDisplays();
+    document.getElementById('song-input').value = ""; 
+}
 
 // ===========================================
 // WHAT TO DO NEXT
