@@ -143,7 +143,7 @@ function addSongToEnd() {
 function addSongToBeginning() {
     // TODO: Use .unshift() method to add "First Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
-    mySongs.unshift("Heart Attack"); // Your code here - use mySongs.unshift("First Song")
+    mySongs.unshift("First Song"); // Your code here - use mySongs.unshift("First Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
