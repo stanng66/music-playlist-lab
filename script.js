@@ -127,7 +127,7 @@ function showMusicStats() {
 function addSongToEnd() {
     // TODO: Use .push() method to add "New Song" to mySongs
     // MDN Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
-    mySongs.push("Ai To U"); // Your code here - use mySongs.push("New Song")
+    mySongs.push("New Song"); // Your code here - use mySongs.push("New Song")
 
     if (mySongs.length === 0) {
         showMessage("❌ Step 1 incomplete: Please add songs to mySongs array first");
